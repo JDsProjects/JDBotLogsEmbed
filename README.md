@@ -5,6 +5,6 @@ If you contribute make sure to run ```bash isort .```
 
 then:
 
-``bash
+```bash
 black -l120 .
-``
+```
