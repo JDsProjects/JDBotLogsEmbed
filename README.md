@@ -11,3 +11,7 @@ then:
 ```bash
 black -l120 .
 ```
+
+Solves the issue here:
+
+https://github.com/JDsProjects/JDBot/issues/125
