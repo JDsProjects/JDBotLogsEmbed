@@ -24,7 +24,7 @@ class Embed(commands.Cog):
 
         if isinstance(member, discord.Member):
 
-            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", timestamp=member.joined_at(),color=random.randint(0, 16777215))
+            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", timestamp=member.joined_at,color=random.randint(0, 16777215))
 
             embed.set_footer(text=f"User ID: {member.id}")
 
