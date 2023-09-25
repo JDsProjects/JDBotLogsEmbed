@@ -32,7 +32,8 @@ class Embed(commands.Cog):
             except:
                 pos = "N/A"
 
-            embed = discord.Embed(description=f"{member} was the {humanize.ordinal(pos)}.",timestamp=member.joined_at,color=240396)
+            timestamp = discord.utils.format_dt(member.joined_at, "F")
+            embed = discord.Embed(description=f"{member} was the {humanize.ordinal(pos)} member to join \nJoin Date: {timestamp}", color=240396)
 
             embed.set_footer(text=f"ID: {member.id}")
 
