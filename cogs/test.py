@@ -28,7 +28,7 @@ class Embed(commands.Cog):
 
             embed.set_footer(text=f"User ID: {member.id}")
 
-            embed.set_image(url=ctx.author.display_avatar.url)
+            embed.set_image(url=interaction.user.display_avatar.url)
 
             await interaction.response.send_message("There", embed=embed)
 
