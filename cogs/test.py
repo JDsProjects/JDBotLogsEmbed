@@ -30,6 +30,8 @@ class Embed(commands.Cog):
 
             embed.set_image(url=member.display_avatar.url)
 
+            embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
+
             await interaction.response.send_message("There", embed=embed)
 
         else:
