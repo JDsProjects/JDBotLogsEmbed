@@ -1,9 +1,11 @@
 from discord.ext import commands
 
 import discord
+import humanize
 
 import random
 import typing
+
 
 from discord import app_commands
 
@@ -30,7 +32,7 @@ class Embed(commands.Cog):
             except:
                 pos = "N/A"
 
-            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", description=f"This person joined {pos} out of {len(member.guild.members)} members",timestamp=member.joined_at,color=random.randint(0, 16777215))
+            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", description=f"This person joined {humanize.ordinal(pos)} out of {humanize.ordinal(len(member.guild.members))} members",timestamp=member.joined_at,color=random.randint(0, 16777215))
 
             embed.set_footer(text=f"User ID: {member.id}")
 
