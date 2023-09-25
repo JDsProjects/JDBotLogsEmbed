@@ -15,7 +15,7 @@ class Embed(commands.Cog):
         return
         #use for later.
 
-    @app_commands.command()
+    @app_commands.command(brief="join embed test")
     async def join(self, interaction: discord.Interaction, member : discord.Member):
 
         member = member or interaction.user
