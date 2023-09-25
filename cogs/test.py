@@ -19,17 +19,19 @@ class Embed(commands.Cog):
     @app_commands.command(description="join embed test", name="join")
     async def join(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User]):
 
+        
         member = member or interaction.user
 
-        if not member.guild:
-            await interaction.response.send_message("No guild detected")
+        if isinstance(member, discord.Member):
 
-        embed=discord.Embed(title=f"{member} just joined {member.guild.name}", timestamp=discord.utils.utcnow(),color=random.randint(0, 16777215))
+            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", timestamp=discord.utils.utcnow(),color=random.randint(0, 16777215))
 
-        embed.set_footer(text=f"User ID: {member.id}")
+            embed.set_footer(text=f"User ID: {member.id}")
 
-        await interaction.send_response("There", embed=embed)
+            await interaction.send_response("There", embed=embed)
 
+        else:
+            await interaction.send_response("User detected, ignoring this.")
     
 async def setup(bot):
     await bot.add_cog(Embed(bot))
