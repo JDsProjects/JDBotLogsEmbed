@@ -32,7 +32,7 @@ class Embed(commands.Cog):
             except:
                 pos = "N/A"
 
-            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", description=f"This person joined {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=random.randint(0, 16777215))
+            embed = discord.Embed(title=f"{member} just joined {member.guild.name}", description=f"This person was the {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=random.randint(0, 16777215))
 
             embed.set_footer(text=f"User ID: {member.id}")
 
