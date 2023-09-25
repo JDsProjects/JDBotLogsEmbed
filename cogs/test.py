@@ -3,6 +3,7 @@ from discord.ext import commands
 import discord
 
 import random
+import typing
 
 from discord import app_commands
 
@@ -16,7 +17,7 @@ class Embed(commands.Cog):
         #use for later.
 
     @app_commands.command(description="join embed test", name="join")
-    async def join(self, interaction: discord.Interaction, member : discord.Member):
+    async def join(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User]):
 
         member = member or interaction.user
 
