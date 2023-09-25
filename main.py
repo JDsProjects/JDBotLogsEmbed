@@ -23,7 +23,7 @@ class EmbedBot(commands.Bot):
             except commands.errors.ExtensionError:
                 traceback.print_exc()
 
-        await self.load_extenstion("jishaku")
+        await self.load_extension("jishaku")
 
 
 
