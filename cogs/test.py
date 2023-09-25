@@ -28,10 +28,10 @@ class Embed(commands.Cog):
 
             embed.set_footer(text=f"User ID: {member.id}")
 
-            await interaction.send_response("There", embed=embed)
+            await interaction.response.send_message("There", embed=embed)
 
         else:
-            await interaction.send_response("User detected, ignoring this.")
+            await interaction.response.send_message("User detected, ignoring this.")
     
 async def setup(bot):
     await bot.add_cog(Embed(bot))
