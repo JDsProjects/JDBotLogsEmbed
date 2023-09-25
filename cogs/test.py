@@ -4,6 +4,8 @@ import discord
 
 import random
 
+from discord import app_commands
+
 class Embed(commands.Cog):
     
     def __init__(self, bot):
