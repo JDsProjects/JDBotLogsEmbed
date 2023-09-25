@@ -28,6 +28,8 @@ class Embed(commands.Cog):
 
             embed.set_footer(text=f"User ID: {member.id}")
 
+            embed.set_author(name="", icon=ctx.author.display_avatar.url)
+
             await interaction.response.send_message("There", embed=embed)
 
         else:
