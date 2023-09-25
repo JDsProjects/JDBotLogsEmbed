@@ -40,6 +40,8 @@ class Embed(commands.Cog):
 
             embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
 
+            embed.set_image(url=member.display_avatar.url)
+
             await interaction.response.send_message("There", embed=embed)
 
         else:
@@ -64,7 +66,9 @@ class Embed(commands.Cog):
 
             embed.set_footer(text=f"ID: {member.id}")
 
-            embed.set_author(name=f"{member} just left {member.guild.name}", icon_url=member.display_avatar.url)
+            embed.set_author(name=f"{member} just left {member.guild.name}")
+
+            embed.set_image(url=member.display_avatar.url)
 
             embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
 
