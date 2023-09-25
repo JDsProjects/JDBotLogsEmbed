@@ -36,7 +36,7 @@ class Embed(commands.Cog):
 
             embed.set_footer(text=f"ID: {member.id}")
 
-            embed.set_author(name=f"{guild} just received a new member", icon_url=member.display_avatar.url)
+            embed.set_author(name=f"{member.guild} just received a new member", icon_url=member.display_avatar.url)
 
             embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
 
