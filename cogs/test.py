@@ -32,7 +32,7 @@ class Embed(commands.Cog):
             except:
                 pos = "N/A"
 
-            embed = discord.Embed(description=f"This person was the {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=random.randint(0, 16777215))
+            embed = discord.Embed(description=f"This person was the {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=240396)
 
             embed.set_footer(text=f"ID: {member.id}")
 
@@ -60,7 +60,7 @@ class Embed(commands.Cog):
             except:
                 pos = "N/A"
 
-            embed = discord.Embed(description=f"This person was the {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=random.randint(0, 16777215))
+            embed = discord.Embed(description=f"This person was the {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=16581893 )
 
             embed.set_footer(text=f"ID: {member.id}")
 
