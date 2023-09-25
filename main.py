@@ -1,7 +1,10 @@
+import os
 import traceback
+
 import discord
 from discord.ext import commands
 
+from dotenv import load_dotenv
 
 from cogs import EXTENSIONS
 
@@ -18,6 +21,8 @@ class EmbedBot(commands.Bot):
             except commands.errors.ExtensionError:
                 traceback.print_exc()
 
+        await self.load_extenstion("jishaku")
+
 
 
 bot = EmbedBot(command_prefix=commands.when_mentioned_or("e$"), intents=discord.Intents.all(), strip_after_prefix=True)
@@ -25,4 +30,5 @@ bot = EmbedBot(command_prefix=commands.when_mentioned_or("e$"), intents=discord.
 
 #so far this.
 
-bot.run("TOKEN")
+load_dotenv()
+bot.run(os.environ["TOKEN"])
