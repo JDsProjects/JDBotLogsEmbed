@@ -36,7 +36,7 @@ class Embed(commands.Cog):
             embed = discord.Embed(color=240396)
 
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**")
-            embed.add_filed(name="ID:", value=f"**{member.id}**")
+            embed.add_field(name="ID:", value=f"**{member.id}**")
             embed.add_field(name="Join Date:", value=f"**{timestamp}**")
             embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**")
 
