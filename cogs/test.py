@@ -111,7 +111,7 @@ class Embed(commands.Cog):
 
             # Mod here would actually be the mod but grabbed from the audit log
 
-            embed.set_author(name=f"{member.guild} just got kicked", icon_url=member.display_avatar.url)
+            embed.set_author(name=f"{member.guild} just kicked a member", icon_url=member.display_avatar.url)
 
             embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
 
