@@ -220,14 +220,14 @@ class Embed(commands.Cog):
         if not before.name == after.name:
             embed.add_field(name="Username",value=f"{before.name} -> {after.name}")
 
-        if not before.avatar_url == after.avatar_url:
-            embed.add_field(name="Avatar",value=f"[[before]]({before.avatar_url}) -> [[after]]({after.avatar_url})")
-            embed.set_thumbnail(url=after.avatar_url)
-            embed.set_image(url=after.avatar_url)
+        if not before.display_avatar == after.display_avatar:
+            embed.add_field(name="Avatar", value=f"[[before]]({before.display_avatar.url}) -> [[after]]({after.display_avatar.url})")
+            embed.set_thumbnail(url=after.display_avatar.url)
+            embed.set_image(url=after.display_avatar.url)
 
     
         if not before.discriminator == after.discriminator:
-            embed.add_field(name="Discriminator",value=f"#{before.discriminator} -> {after.discriminator}")
+            embed.add_field(name="Discriminator", value=f"#{before.discriminator} -> {after.discriminator}")
 
         await interaction.response.send_message(content = "Work in Progress Embed:", embed=embed)
 
