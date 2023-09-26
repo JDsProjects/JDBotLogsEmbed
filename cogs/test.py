@@ -232,7 +232,7 @@ class Embed(commands.Cog):
 
         embed = discord.Embed(
             description=f"{before.mention} **updated their profile!**",
-            color=random.randint(0, 16777215),
+            color=7760845,
             timestamp=discord.utils.utcnow(),
         )
         embed.set_author(name=f"{before}", icon_url=after.display_avatar.url)
