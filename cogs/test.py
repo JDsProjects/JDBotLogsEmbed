@@ -85,8 +85,6 @@ class Embed(commands.Cog):
 
             await interaction.response.send_message("There", embed=embed)
 
-            await interaction.response.send_message("There", embed=embed)
-
         else:
             await interaction.response.send_message("User detected, ignoring this.")
     
