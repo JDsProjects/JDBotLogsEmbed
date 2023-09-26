@@ -82,7 +82,9 @@ class Embed(commands.Cog):
             await interaction.response.send_message("User detected, ignoring this.")
 
     @app_commands.command(description="kick embed test", name="kick")
-    async def kicked(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User]):
+    async def kicked(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User], reason : typing.Optional[str]):
+
+        reason = reason or "Test"
 
         member = member or interaction.user
 
@@ -103,6 +105,11 @@ class Embed(commands.Cog):
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
             embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
             embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
+            embed.add_field(name="Reason:", value=f"{reason}")
+
+            embed.add_field(name="Mod:", value=f"{interaction.user}")
+
+            # Mod here would actually be the mod but grabbed from the audit log
 
             embed.set_author(name=f"{member.guild} just got kicked", icon_url=member.display_avatar.url)
 
