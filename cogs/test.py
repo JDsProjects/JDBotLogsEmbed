@@ -107,7 +107,7 @@ class Embed(commands.Cog):
             embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
             embed.add_field(name="Reason:", value=f"{reason}")
 
-            embed.add_field(name="Mod:", value=f"{interaction.user}")
+            embed.add_field(name="Mod:", value=f"**{interaction.user.mention}({interaction.user})**")
 
             # Mod here would actually be the mod but grabbed from the audit log
 
