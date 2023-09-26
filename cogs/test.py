@@ -35,10 +35,10 @@ class Embed(commands.Cog):
             timestamp = discord.utils.format_dt(member.joined_at, "F")
             embed = discord.Embed(color=240396)
 
-            embed.add_field(name="Name:", value=f"**{member.mention}({member})**")
-            embed.add_field(name="ID:", value=f"**{member.id}**")
-            embed.add_field(name="Join Date:", value=f"**{timestamp}**")
-            embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**")
+            embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
+            embed.add_field(name="ID:", value=f"**{member.id}**", inline=False)
+            embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
+            embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
 
             embed.set_author(name=f"{member.guild} just received a new member", icon_url=member.display_avatar.url)
 
