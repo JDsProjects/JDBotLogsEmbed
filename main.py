@@ -28,7 +28,7 @@ bot = EmbedBot(command_prefix=commands.when_mentioned_or("e$"), intents=discord.
 @bot.event
 async def on_ready():
     print(bot.user)
-    print(bot.id)
+    print(bot.user.id)
 
 # so far this.
 
