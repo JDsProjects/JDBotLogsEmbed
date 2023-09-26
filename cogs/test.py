@@ -69,7 +69,7 @@ class Embed(commands.Cog):
 
 
             timestamp = discord.utils.format_dt(member.joined_at, "F")
-            embed = discord.Embed(color=240396)
+            embed = discord.Embed(color=16581893)
 
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
             embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
