@@ -210,6 +210,30 @@ class Embed(commands.Cog):
         else:
             await interaction.response.send_message("User detected, ignoring this.")
 
+    @app_commands.command(description="member change embed test", name="member_change")
+    async def member_update(self, interaction: discord.Interaction, before : typing.Union[discord.Member, discord.User], after : typing.Union[discord.Member, discord.User]):
+
+        embed = discord.Embed(description=f"{before.mention} **updated their profile!**", color=random.randint(0, 16777215),timestamp=interaction.message.created_at)
+        embed.set_author(name=f"{before}",icon_url=after.display_avatar.url)
+        embed.set_footer(text=f"User ID: {before.id}")
+
+        if not before.name == after.name:
+            embed.add_field(name="Username",value=f"{before.name} -> {after.name}")
+
+        if not before.avatar_url == after.avatar_url:
+            embed.add_field(name="Avatar",value=f"[[before]]({before.avatar_url}) -> [[after]]({after.avatar_url})")
+            embed.set_thumbnail(url=after.avatar_url)
+            embed.set_image(url=after.avatar_url)
+
+    
+        if not before.discriminator == after.discriminator:
+            embed.add_field(name="Discriminator",value=f"#{before.discriminator} -> {after.discriminator}")
+
+        await interaction.response.send_message(content = "Work in Progress Embed:", embed=embed)
+
+        # check https://discordpy.readthedocs.io/en/latest/api.html#discord.on_member_update for full list of changes
+
+
 
 async def setup(bot):
     await bot.add_cog(Embed(bot))
