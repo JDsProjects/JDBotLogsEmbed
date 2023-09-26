@@ -81,7 +81,7 @@ class Embed(commands.Cog):
         else:
             await interaction.response.send_message("User detected, ignoring this.")
 
-    @app_commands.command(description="kick embed test", name="kick")
+    @app_commands.command(description="kick embed test", name="kicked")
     async def kicked(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User], reason : typing.Optional[str]):
 
         reason = reason or "Test"
