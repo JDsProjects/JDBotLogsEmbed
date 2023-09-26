@@ -241,6 +241,12 @@ class Embed(commands.Cog):
         if not before.name == after.name:
             embed.add_field(name="Username", value=f"{before.name} -> {after.name}", inline=False)
 
+        if not before.display_name == after.display_name:
+            
+            if before.name != after.name:
+
+                embed.add_field(name="Nickname", value=f"{before.display_name} -> {after.display_name}", inline=False)
+
         if not before.display_avatar == after.display_avatar:
             embed.add_field(
                 name="Avatar", value=f"[[before]]({before.display_avatar.url}) -> [[after]]({after.display_avatar.url})", inline=False
