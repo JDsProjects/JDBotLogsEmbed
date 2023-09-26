@@ -82,7 +82,12 @@ class Embed(commands.Cog):
             await interaction.response.send_message("User detected, ignoring this.")
 
     @app_commands.command(description="kick embed test", name="kicked")
-    async def kicked(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User], reason : typing.Optional[str]):
+    async def kicked(
+        self,
+        interaction: discord.Interaction,
+        member: typing.Union[discord.Member, discord.User],
+        reason: typing.Optional[str],
+    ):
 
         reason = reason or "Test"
 
@@ -95,7 +100,6 @@ class Embed(commands.Cog):
 
             except:
                 pos = "N/A"
-
 
             # kicked embeds must be private in general (moderator only)
 
@@ -125,7 +129,12 @@ class Embed(commands.Cog):
             await interaction.response.send_message("User detected, ignoring this.")
 
     @app_commands.command(description="ban embed test", name="banned")
-    async def banned(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User], reason : typing.Optional[str]):
+    async def banned(
+        self,
+        interaction: discord.Interaction,
+        member: typing.Union[discord.Member, discord.User],
+        reason: typing.Optional[str],
+    ):
 
         reason = reason or "Test"
 
@@ -138,7 +147,6 @@ class Embed(commands.Cog):
 
             except:
                 pos = "N/A"
-
 
             # banned embeds must be private in general (moderator only)
 
@@ -168,7 +176,12 @@ class Embed(commands.Cog):
             await interaction.response.send_message("User detected, ignoring this.")
 
     @app_commands.command(description="unban embed test", name="unbanned")
-    async def unbanned(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User], reason : typing.Optional[str]):
+    async def unbanned(
+        self,
+        interaction: discord.Interaction,
+        member: typing.Union[discord.Member, discord.User],
+        reason: typing.Optional[str],
+    ):
 
         reason = reason or "Test"
 
@@ -181,7 +194,6 @@ class Embed(commands.Cog):
 
             except:
                 pos = "N/A"
-
 
             # unbanned embeds must be private in general (moderator only)
 
@@ -211,28 +223,37 @@ class Embed(commands.Cog):
             await interaction.response.send_message("User detected, ignoring this.")
 
     @app_commands.command(description="member change embed test", name="member_change")
-    async def member_update(self, interaction: discord.Interaction, before : typing.Union[discord.Member, discord.User], after : typing.Union[discord.Member, discord.User]):
+    async def member_update(
+        self,
+        interaction: discord.Interaction,
+        before: typing.Union[discord.Member, discord.User],
+        after: typing.Union[discord.Member, discord.User],
+    ):
 
-        embed = discord.Embed(description=f"{before.mention} **updated their profile!**", color=random.randint(0, 16777215),timestamp=discord.utils.utcnow())
-        embed.set_author(name=f"{before}",icon_url=after.display_avatar.url)
+        embed = discord.Embed(
+            description=f"{before.mention} **updated their profile!**",
+            color=random.randint(0, 16777215),
+            timestamp=discord.utils.utcnow(),
+        )
+        embed.set_author(name=f"{before}", icon_url=after.display_avatar.url)
         embed.set_footer(text=f"User ID: {before.id}")
 
         if not before.name == after.name:
-            embed.add_field(name="Username",value=f"{before.name} -> {after.name}")
+            embed.add_field(name="Username", value=f"{before.name} -> {after.name}")
 
         if not before.display_avatar == after.display_avatar:
-            embed.add_field(name="Avatar", value=f"[[before]]({before.display_avatar.url}) -> [[after]]({after.display_avatar.url})")
+            embed.add_field(
+                name="Avatar", value=f"[[before]]({before.display_avatar.url}) -> [[after]]({after.display_avatar.url})"
+            )
             embed.set_thumbnail(url=after.display_avatar.url)
             embed.set_image(url=after.display_avatar.url)
 
-    
         if not before.discriminator == after.discriminator:
             embed.add_field(name="Discriminator", value=f"#{before.discriminator} -> {after.discriminator}")
 
-        await interaction.response.send_message(content = "Work in Progress Embed:", embed=embed)
+        await interaction.response.send_message(content="Work in Progress Embed:", embed=embed)
 
         # check https://discordpy.readthedocs.io/en/latest/api.html#discord.on_member_update for full list of changes
-
 
 
 async def setup(bot):
