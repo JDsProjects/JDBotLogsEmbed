@@ -105,7 +105,7 @@ class Embed(commands.Cog):
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
             embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
             embed.add_field(name="Join Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
-            embed.add_field(name="Reason:", value=f"{reason}")
+            embed.add_field(name="Reason:", value=f"**{reason}**")
 
             embed.add_field(name="Mod:", value=f"**{interaction.user.mention}({interaction.user})**")
 
@@ -148,7 +148,7 @@ class Embed(commands.Cog):
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
             embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
             embed.add_field(name="Join Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
-            embed.add_field(name="Reason:", value=f"{reason}")
+            embed.add_field(name="Reason:", value=f"**{reason}**")
 
             embed.add_field(name="Mod:", value=f"**{interaction.user.mention}({interaction.user})**")
 
@@ -191,7 +191,7 @@ class Embed(commands.Cog):
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
             embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
             embed.add_field(name="Join Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
-            embed.add_field(name="Reason:", value=f"{reason}")
+            embed.add_field(name="Reason:", value=f"**{reason}**")
 
             embed.add_field(name="Mod:", value=f"**{interaction.user.mention}({interaction.user})**")
 
