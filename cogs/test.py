@@ -183,7 +183,7 @@ class Embed(commands.Cog):
                 pos = "N/A"
 
 
-            # banned embeds must be private in general (moderator only)
+            # unbanned embeds must be private in general (moderator only)
 
             timestamp = discord.utils.format_dt(member.joined_at, "F")
             embed = discord.Embed(color=16581893)
