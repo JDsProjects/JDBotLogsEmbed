@@ -67,15 +67,23 @@ class Embed(commands.Cog):
             except:
                 pos = "N/A"
 
-            embed = discord.Embed(description=f"This person was the {humanize.ordinal(pos)} out of {len(member.guild.members)} members to join.",timestamp=member.joined_at,color=16581893 )
 
-            embed.set_footer(text=f"ID: {member.id}")
+            timestamp = discord.utils.format_dt(member.joined_at, "F")
+            embed = discord.Embed(color=240396)
 
-            embed.set_author(name=f"{member} just left {member.guild.name}")
+            embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
+            embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
+            embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
+
+            embed.set_author(name=f"{member.guild} just lost a member", icon_url=member.display_avatar.url)
+
+            embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
 
             embed.set_image(url=member.display_avatar.url)
 
-            embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
+            embed.set_footer(text=f"ID: {member.id}")
+
+            await interaction.response.send_message("There", embed=embed)
 
             await interaction.response.send_message("There", embed=embed)
 
