@@ -213,7 +213,7 @@ class Embed(commands.Cog):
     @app_commands.command(description="member change embed test", name="member_change")
     async def member_update(self, interaction: discord.Interaction, before : typing.Union[discord.Member, discord.User], after : typing.Union[discord.Member, discord.User]):
 
-        embed = discord.Embed(description=f"{before.mention} **updated their profile!**", color=random.randint(0, 16777215),timestamp=interaction.message.created_at)
+        embed = discord.Embed(description=f"{before.mention} **updated their profile!**", color=random.randint(0, 16777215),timestamp=discord.utils.utcnow())
         embed.set_author(name=f"{before}",icon_url=after.display_avatar.url)
         embed.set_footer(text=f"User ID: {before.id}")
 
