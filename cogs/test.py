@@ -36,7 +36,6 @@ class Embed(commands.Cog):
             embed = discord.Embed(color=240396)
 
             embed.add_field(name="Name:", value=f"**{member.mention}({member})**", inline=False)
-            embed.add_field(name="ID:", value=f"**{member.id}**", inline=False)
             embed.add_field(name="Join Date:", value=f"**{timestamp}**", inline=False)
             embed.add_field(name="Position:", value=f"**{humanize.ordinal(pos)}**", inline=False)
 
@@ -45,6 +44,8 @@ class Embed(commands.Cog):
             embed.set_thumbnail(url=member.guild.icon.url if member.guild.icon else "https://i.imgur.com/3ZUrjUP.png")
 
             embed.set_image(url=member.display_avatar.url)
+
+            embed.set_footer(text=f"ID: {member.id}")
 
             await interaction.response.send_message("There", embed=embed)
 
