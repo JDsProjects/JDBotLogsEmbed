@@ -87,6 +87,8 @@ class Embed(commands.Cog):
 
         else:
             await interaction.response.send_message("User detected, ignoring this.")
+
+    # add a kick embed
     
 async def setup(bot):
     await bot.add_cog(Embed(bot))
