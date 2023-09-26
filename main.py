@@ -25,7 +25,7 @@ class EmbedBot(commands.Bot):
 
 bot = EmbedBot(command_prefix=commands.when_mentioned_or("e$"), intents=discord.Intents.all(), strip_after_prefix=True)
 
-@bot.event()
+@bot.event
 async def on_ready():
     print(bot.user)
     print(bot.id)
