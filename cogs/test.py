@@ -249,7 +249,7 @@ class Embed(commands.Cog):
             embed.set_image(url=after.display_avatar.url)
 
         if not before.discriminator == after.discriminator:
-            embed.add_field(name="Discriminator", value=f"#{before.discriminator} -> {after.discriminator}", inline=False)
+            embed.add_field(name="Discriminator", value=f"#{before.discriminator} -> #{after.discriminator}", inline=False)
 
         await interaction.response.send_message(content="Work in Progress Embed:", embed=embed)
 
