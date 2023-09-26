@@ -1,27 +1,23 @@
-from discord.ext import commands
-
-import discord
-import humanize
-
 import random
 import typing
 
-
+import discord
+import humanize
 from discord import app_commands
+from discord.ext import commands
+
 
 class Embed(commands.Cog):
-    
     def __init__(self, bot):
         self.bot = bot
 
     async def cog_unload(self):
         return
-        #use for later.
+        # use for later.
 
     @app_commands.command(description="join embed test", name="join")
-    async def join(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User]):
+    async def join(self, interaction: discord.Interaction, member: typing.Union[discord.Member, discord.User]):
 
-        
         member = member or interaction.user
 
         if isinstance(member, discord.Member):
@@ -52,11 +48,9 @@ class Embed(commands.Cog):
         else:
             await interaction.response.send_message("User detected, ignoring this.")
 
-
     @app_commands.command(description="leave embed test", name="leave")
-    async def leave(self, interaction: discord.Interaction, member : typing.Union[discord.Member, discord.User]):
+    async def leave(self, interaction: discord.Interaction, member: typing.Union[discord.Member, discord.User]):
 
-        
         member = member or interaction.user
 
         if isinstance(member, discord.Member):
@@ -66,7 +60,6 @@ class Embed(commands.Cog):
 
             except:
                 pos = "N/A"
-
 
             timestamp = discord.utils.format_dt(member.joined_at, "F")
             embed = discord.Embed(color=16581893)
@@ -89,6 +82,7 @@ class Embed(commands.Cog):
             await interaction.response.send_message("User detected, ignoring this.")
 
     # add a kick embed
-    
+
+
 async def setup(bot):
     await bot.add_cog(Embed(bot))

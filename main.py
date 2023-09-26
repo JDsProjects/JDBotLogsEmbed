@@ -1,18 +1,15 @@
 import os
 import traceback
-
 from typing import Any
 
 import discord
 from discord.ext import commands
-
 from dotenv import load_dotenv
 
 from cogs import EXTENSIONS
 
 
 class EmbedBot(commands.Bot):
-
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
 
@@ -26,11 +23,10 @@ class EmbedBot(commands.Bot):
         await self.load_extension("jishaku")
 
 
-
 bot = EmbedBot(command_prefix=commands.when_mentioned_or("e$"), intents=discord.Intents.all(), strip_after_prefix=True)
 
 
-#so far this.
+# so far this.
 
 load_dotenv()
 bot.run(os.environ["TOKEN"])
