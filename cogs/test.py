@@ -239,17 +239,17 @@ class Embed(commands.Cog):
         embed.set_footer(text=f"User ID: {before.id}")
 
         if not before.name == after.name:
-            embed.add_field(name="Username", value=f"{before.name} -> {after.name}")
+            embed.add_field(name="Username", value=f"{before.name} -> {after.name}", inline=False)
 
         if not before.display_avatar == after.display_avatar:
             embed.add_field(
-                name="Avatar", value=f"[[before]]({before.display_avatar.url}) -> [[after]]({after.display_avatar.url})"
+                name="Avatar", value=f"[[before]]({before.display_avatar.url}) -> [[after]]({after.display_avatar.url})", inline=False
             )
-            embed.set_thumbnail(url=after.display_avatar.url)
+            embed.set_thumbnail(url=before.display_avatar.url)
             embed.set_image(url=after.display_avatar.url)
 
         if not before.discriminator == after.discriminator:
-            embed.add_field(name="Discriminator", value=f"#{before.discriminator} -> {after.discriminator}")
+            embed.add_field(name="Discriminator", value=f"#{before.discriminator} -> {after.discriminator}", inline=False)
 
         await interaction.response.send_message(content="Work in Progress Embed:", embed=embed)
 
