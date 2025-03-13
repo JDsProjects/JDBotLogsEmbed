@@ -1,4 +1,4 @@
-name: Update requirements.txt
+name: Update pinned.txt
 
 on:
   push:
@@ -26,12 +26,12 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    - name: Export dependencies to requirements.txt
-      run: poetry export --without-hashes --without-urls | awk '{ print $1 }' FS=';' > requirements.txt
+    - name: Export dependencies to pinned.txt
+      run: poetry export --without-hashes --without-urls | awk '{ print $1 }' FS=';' > pinned.txt
 
-    - name: Show generated requirements.txt
-      run: cat requirements.txt
+    - name: Show generated pinned.txt
+      run: cat pinned.txt
 
     - uses: EndBug/add-and-commit@v9
       with:
-        message: Export requirements.txt
+        message: Export pinned.txt
